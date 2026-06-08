@@ -61,8 +61,6 @@ Which papers discuss attention mechanisms for long-horizon forecasting?
 
 ## Folder Structure
 
-## Folder Structure
-
 ```text
 agentic-ai-research-assistant/
 │
