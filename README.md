@@ -35,7 +35,6 @@ The project now includes both keyword-based arXiv search and semantic search usi
 - Sentence Transformers
 - Scikit-learn
 - Cosine Similarity
-- 
 
 ## Folder Structure
 
