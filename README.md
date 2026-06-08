@@ -44,9 +44,9 @@ agentic-ai-research-assistant/
 ├── data/
 │   └── arxiv_papers.csv
 │
-├── src/src/
-├── arxiv_search.py
-└── semantic_search.py
+├── src/
+│   ├── arxiv_search.py
+│   └── semantic_search.py
 │
 ├── app.py
 ├── requirements.txt
