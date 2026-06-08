@@ -12,8 +12,7 @@ In the current version, I focused mainly on papers related to transformer-based 
 
 As a statistics and data science student, I often need to search for research papers while preparing for projects, thesis ideas, or technical discussions. Searching manually can take time, and sometimes the results are not very focused.
 
-This project is a first step toward building a more advanced AI research assistant that can later include semantic search, paper summarization, and RAG-based question answering.
-
+The project now includes both keyword-based arXiv search and semantic search using sentence-transformer embeddings.
 ## Features
 
 - Search research papers from arXiv
@@ -22,6 +21,10 @@ This project is a first step toward building a more advanced AI research assista
 - Save the results into a CSV file
 - Download the search results from the app
 - Simple Streamlit interface
+- Semantic search using sentence embeddings
+- Rank papers by similarity score
+- Ask natural language research questions
+- Download semantic search results as CSV
 
 ## Tech Stack
 
@@ -29,6 +32,10 @@ This project is a first step toward building a more advanced AI research assista
 - Streamlit
 - Pandas
 - arXiv API
+- Sentence Transformers
+- Scikit-learn
+- Cosine Similarity
+- 
 
 ## Folder Structure
 
@@ -38,11 +45,12 @@ agentic-ai-research-assistant/
 ├── data/
 │   └── arxiv_papers.csv
 │
-├── src/
-│   └── arxiv_search.py
+├── src/src/
+├── arxiv_search.py
+└── semantic_search.py
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+  
