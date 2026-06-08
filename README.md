@@ -14,6 +14,8 @@ As a statistics and data science student, I often need to search for research pa
 
 I started with a simple search version first, and then added semantic search. Later, I want to extend it with paper summarization, RAG-based question answering, and agentic workflows.
 
+## Features
+
 - Search research papers from arXiv
 - Display paper title, authors, publication date, abstract, and PDF link
 - Focus results on AI, machine learning, and statistics-related papers
