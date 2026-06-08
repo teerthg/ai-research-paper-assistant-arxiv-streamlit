@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a research paper assistant built with Python, Streamlit, and the arXiv API.
+This is a small project I built to make academic paper search easier using Python, Streamlit, and the arXiv API.
 
 The main idea of this project is to make it easier to search academic papers from arXiv. The user can enter a research topic, and the app returns relevant papers with their title, authors, publication date, abstract, and PDF link.
 
@@ -12,9 +12,7 @@ The project now includes both keyword-based arXiv search and semantic search usi
 
 As a statistics and data science student, I often need to search for research papers while preparing for projects, thesis ideas, or technical discussions. Searching manually can take time, and sometimes the results are not very focused.
 
-This project is a first step toward building a more advanced AI research assistant that can later include paper summarization, RAG-based question answering, and agentic workflows.
-
-## Features
+I started with a simple search version first, and then added semantic search. Later, I want to extend it with paper summarization, RAG-based question answering, and agentic workflows.
 
 - Search research papers from arXiv
 - Display paper title, authors, publication date, abstract, and PDF link
@@ -49,6 +47,9 @@ Example semantic question:
 
 ```text
 Which papers discuss attention mechanisms for long-horizon forecasting?
+```
+The app returns the most semantically relevant papers along with similarity scores.
+
 ## Tech Stack
 
 - Python
