@@ -61,6 +61,8 @@ Which papers discuss attention mechanisms for long-horizon forecasting?
 
 ## Folder Structure
 
+## Folder Structure
+
 ```text
 agentic-ai-research-assistant/
 │
@@ -75,4 +77,91 @@ agentic-ai-research-assistant/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-  
+```
+
+## How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/teerthg/ai-research-paper-assistant-arxiv-streamlit.git
+```
+
+Go to the project folder:
+
+```bash
+cd ai-research-paper-assistant-arxiv-streamlit
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+On Windows, this command can also be used:
+
+```bash
+.\venv\Scripts\python.exe -m streamlit run app.py
+```
+
+## Example Search
+
+Research topic:
+
+```text
+transformer time series forecasting
+```
+
+Semantic question:
+
+```text
+Which papers discuss attention mechanisms for long-horizon forecasting?
+```
+
+## Output
+
+For each paper, the app shows:
+
+- Title
+- Authors
+- Published date
+- Abstract
+- PDF link
+- Similarity score for semantic search results
+
+The user can download both keyword search results and semantic search results as CSV files.
+
+## Current Limitations
+
+- The current version mainly focuses on transformer-based time series forecasting.
+- The app uses abstracts rather than full paper PDFs.
+- Semantic search ranks papers by abstract similarity, but it does not yet generate full answers.
+- The app does not yet include citation analysis or paper summarization.
+
+## Future Work
+
+- Add ChromaDB for persistent vector storage
+- Add RAG-based question answering
+- Add automatic paper summarization
+- Use Semantic Scholar API for citation information
+- Add filters for year, author, and paper category
+- Build an agentic workflow using LangGraph
+
+## Status
+
+Version 2 completed.
+
+The app can search arXiv papers, display results, save them as CSV, and perform semantic search using sentence-transformer embeddings and cosine similarity.
