@@ -3,9 +3,16 @@ from src.arxiv_search import search_arxiv, save_papers_to_csv
 from src.semantic_search import (
     load_embedding_model,
     create_paper_embeddings,
-    semantic_search
+    semantic_search,
+    create_query_embedding
 )
 
+from src.vector_store import (
+    get_chroma_client,
+    get_or_create_collection,
+    add_papers_to_chroma,
+    search_chroma
+)
 
 st.set_page_config(
     page_title="Research Paper Assistant",
@@ -120,3 +127,39 @@ if st.button("Search Papers"):
             file_name="semantic_search_results.csv",
             mime="text/csv"
         )
+
+        st.subheader("ChromaDB Vector search results")
+
+        with st.spinner("Storing embeddings in ChromaDB and retrieving similar papers..."):
+            chroma_client = get_chroma_client()
+            collection = get_or_create_collection(chroma_client)
+
+            # Clear old collection data to avoid duplicate IDs during repeated runs
+            existing_ids = collection.get()["ids"]
+            if existing_ids:
+                collection.delete(ids=existing_ids)
+
+            add_papers_to_chroma(collection, df, paper_embeddings)
+
+            query_embedding = create_query_embedding(semantic_question, model)
+
+            chroma_results = search_chroma(
+                collection,
+                query_embedding,
+                top_k = top_k
+            )
+        st.success("ChromaDB vector search completed.")
+
+        for i in range(len(chroma_results["ids"][0])):
+            metadata = chroma_results["metadatas"][0][i]
+            document = chroma_results["documents"][0][i]
+            distance = round(chroma_results["distances"][0][i],3)
+
+            st.markdown(f"## {metadata['title']}")
+            st.write(f"**Distance:** {distance}")
+            st.write(f"**Authors:** {metadata['authors']}")
+            st.write(f"**Published:** {metadata['published']}")
+            st.write(document)
+            st.markdown(f"[PDF Link]({metadata['pdf_url']})")
+            st.write("---")
+
