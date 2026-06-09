@@ -1,4 +1,4 @@
-# AI Research Paper Assistant using arXiv API and Streamlit
+# AI Research Paper Assistant: Semantic Search, Vector Search, and Literature Discovery
 
 ## Overview
 
