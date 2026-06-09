@@ -26,6 +26,8 @@ I started with a simple search version first, and then added semantic search. La
 - Rank papers by similarity score
 - Download semantic search results as CSV
 - Simple Streamlit interface
+- Store paper embeddings in ChromaDB
+- Retrieve semantically similar papers using vector database search
 
 ## Version 1: Keyword Search
 
@@ -71,6 +73,7 @@ The app now shows ChromaDB vector search results along with distance scores. In 
 - Sentence Transformers
 - Scikit-learn
 - Cosine Similarity
+- ChromaDB
 
 ## Folder Structure
 
@@ -82,7 +85,8 @@ agentic-ai-research-assistant/
 │
 ├── src/
 │   ├── arxiv_search.py
-│   └── semantic_search.py
+│   ├── semantic_search.py
+│   └── vector_store.py
 │
 ├── app.py
 ├── requirements.txt
@@ -152,6 +156,7 @@ For each paper, the app shows:
 - Abstract
 - PDF link
 - Similarity score for semantic search results
+- ChromaDB distance score for vector search results
 
 The user can download both keyword search results and semantic search results as CSV files.
 
@@ -164,7 +169,6 @@ The user can download both keyword search results and semantic search results as
 
 ## Future Work
 
-- Add ChromaDB for persistent vector storage
 - Add RAG-based question answering
 - Add automatic paper summarization
 - Use Semantic Scholar API for citation information
@@ -173,6 +177,6 @@ The user can download both keyword search results and semantic search results as
 
 ## Status
 
-Version 2 completed.
+Version 2b completed.
 
-The app can search arXiv papers, display results, save them as CSV, and perform semantic search using sentence-transformer embeddings and cosine similarity.
+The app can search arXiv papers, display results, save them as CSV, and perform semantic search using sentence-transformer embeddings, and retrieve relevant papers using ChromaDB vector search.
