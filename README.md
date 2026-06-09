@@ -52,6 +52,16 @@ Which papers discuss attention mechanisms for long-horizon forecasting?
 ```
 The app returns the most semantically relevant papers along with similarity scores.
 
+## Version 2B: ChromaDB Vector Search
+
+In Version 2B, I added ChromaDB as a local vector database.
+
+In the earlier semantic search version, embeddings were created and compared directly in memory using cosine similarity. With ChromaDB, the paper abstract embeddings are stored in a vector database and retrieved based on similarity to the user's research question.
+
+This makes the project closer to a real RAG-style workflow, where documents are first embedded, stored in a vector database, and then retrieved when the user asks a question.
+
+The app now shows ChromaDB vector search results along with distance scores. In ChromaDB results, a lower distance score means the paper is more relevant to the query.
+
 ## Tech Stack
 
 - Python
