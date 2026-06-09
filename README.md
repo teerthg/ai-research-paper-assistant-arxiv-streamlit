@@ -6,7 +6,7 @@ This is a small project I built to make academic paper search easier using Pytho
 
 The main idea of this project is to make it easier to search academic papers from arXiv. The user can enter a research topic, and the app returns relevant papers with their title, authors, publication date, abstract, and PDF link.
 
-The project now includes both keyword-based arXiv search and semantic search using sentence-transformer embeddings. In the current version, I focused mainly on papers related to transformer-based time series forecasting.
+The project now includes keyword-based arXiv search, semantic search using sentence-transformer embeddings, and ChromaDB-based vector search.
 
 ## Why I built this
 
@@ -166,6 +166,7 @@ The user can download both keyword search results and semantic search results as
 - The app uses abstracts rather than full paper PDFs.
 - Semantic search ranks papers by abstract similarity, but it does not yet generate full answers.
 - The app does not yet include citation analysis or paper summarization.
+- ChromaDB is currently used as a local vector database and is not yet deployed as a cloud-based persistent service.
 
 ## Future Work
 
@@ -177,6 +178,6 @@ The user can download both keyword search results and semantic search results as
 
 ## Status
 
-Version 2b completed.
+Version 2B completed.
 
-The app can search arXiv papers, display results, save them as CSV, and perform semantic search using sentence-transformer embeddings, and retrieve relevant papers using ChromaDB vector search.
+The app can search arXiv papers, display results, save them as CSV, perform semantic search using sentence-transformer embeddings, and retrieve relevant papers using ChromaDB vector search.
