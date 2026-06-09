@@ -41,3 +41,14 @@ def semantic_search(query, papers_df, embeddings, model, top_k=5):
     results["similarity_score"] = similarities[top_indices]
 
     return results
+
+def create_query_embedding(query, model):
+    """
+    Create an embedding for the user's semantic search query.
+    """
+    query_embedding = model.encode(
+        [query],
+        convert_to_numpy=True,
+        show_progress_bar=False
+    )
+    return query_embedding
